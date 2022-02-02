@@ -18,18 +18,17 @@ class BaseLoginOptions {
   external String get audience;
   external String? get connection;
 
-  external factory BaseLoginOptions({
-    String display,
-    String prompt,
-    Object max_age,
-    String ui_locales,
-    String id_token_hint,
-    String login_hint,
-    String acr_values,
-    String scope,
-    String audience,
-    String? connection
-  });
+  external factory BaseLoginOptions(
+      {String display,
+      String prompt,
+      Object max_age,
+      String ui_locales,
+      String id_token_hint,
+      String login_hint,
+      String acr_values,
+      String scope,
+      String audience,
+      String? connection});
 }
 
 @JS()
@@ -37,9 +36,7 @@ class BaseLoginOptions {
 class AdvancedOptions {
   external String? get defaultScope;
 
-  external factory AdvancedOptions({
-    String? defaultScope
-  });
+  external factory AdvancedOptions({String? defaultScope});
 }
 
 @JS()
@@ -48,6 +45,7 @@ class Auth0ClientOptions extends BaseLoginOptions {
   external String get domain;
   external String get issuer;
   external String get client_id;
+  external String get redirect_uri;
   external String get redirect_url;
   external num get leeway;
   external Object get cacheLocation;
@@ -57,65 +55,63 @@ class Auth0ClientOptions extends BaseLoginOptions {
   external bool get useCookiesForTransactions;
   external AdvancedOptions get advancedOptions;
   external num get sessionCheckExpiryDays;
-  
-  external factory Auth0ClientOptions({
-    String display,
-    String prompt,
-    Object max_age,
-    String ui_locales,
-    String id_token_hint,
-    String login_hint,
-    String acr_values,
-    String scope,
-    String audience,
-    String? connection,
-    @required String domain,
-    String issuer,
-    @required String client_id,
-    String redirect_url,
-    num leeway,
-    Object cacheLocation,
-    bool useRefreshTokens,
-    num authorizeTimeoutInSeconds,
-    bool legacySameSiteCookie,
-    bool useCookiesForTransactions,
-    AdvancedOptions advancedOptions,
-    num sessionCheckExpiryDays
-  });
+
+  external factory Auth0ClientOptions(
+      {String display,
+      String prompt,
+      Object max_age,
+      String ui_locales,
+      String id_token_hint,
+      String login_hint,
+      String acr_values,
+      String scope,
+      String audience,
+      String? connection,
+      @required String domain,
+      String issuer,
+      @required String client_id,
+      String redirect_uri,
+      String redirect_url,
+      num leeway,
+      Object cacheLocation,
+      bool useRefreshTokens,
+      num authorizeTimeoutInSeconds,
+      bool legacySameSiteCookie,
+      bool useCookiesForTransactions,
+      AdvancedOptions advancedOptions,
+      num sessionCheckExpiryDays});
 }
 
 @JS()
 @anonymous
-class PopupLoginOptions extends BaseLoginOptions{
-  external factory PopupLoginOptions({
-    String display,
-    String prompt,
-    Object max_age,
-    String ui_locales,
-    String id_token_hint,
-    String login_hint,
-    String acr_values,
-    String scope,
-    String audience,
-    String? connection
-  });
+class PopupLoginOptions extends BaseLoginOptions {
+  external factory PopupLoginOptions(
+      {String display,
+      String prompt,
+      Object max_age,
+      String ui_locales,
+      String id_token_hint,
+      String login_hint,
+      String acr_values,
+      String scope,
+      String audience,
+      String? connection});
 }
 
 @JS()
 @anonymous
 class GetTokenWithPopupOptions extends PopupLoginOptions {
-  external factory GetTokenWithPopupOptions({
-    String display,
-    String prompt,
-    Object max_age,
-    String ui_locales,
-    String id_token_hint,
-    String login_hint,
-    String acr_values,
-    String scope,
-    String audience,
-    String? connection
-  });
+  external factory GetTokenWithPopupOptions(
+      {String display,
+      String prompt,
+      Object max_age,
+      String ui_locales,
+      String id_token_hint,
+      String login_hint,
+      String acr_values,
+      String scope,
+      String audience,
+      String? connection});
 }
 
 @JS()
@@ -154,7 +150,7 @@ class LogoutOptions {
 
 @JS()
 @anonymous
-class GetUserOptions{
+class GetUserOptions {
   external String get scope;
   external String get audience;
 
